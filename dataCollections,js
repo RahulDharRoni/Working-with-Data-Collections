@@ -1,4 +1,4 @@
-// // Part - 1
+/*// // Part - 1
 // ==============================
 
 // Part - 1.1
@@ -13,8 +13,6 @@ for (let i = 1; i <= 100; i++) {
     console.log(i);
   }
 }
-
-
 
 // Part 1.2: Prime Time
 let num = 4;
@@ -76,7 +74,7 @@ for (let data of splitIt) {
   const ans = data.split(",");
   //   console.log(...ans);
   console.log(ans.join(","));
-}
+}*/
 
 // Part 2
 // ==============================================================================================================================
@@ -89,9 +87,22 @@ for (let data of splitIt2) {
   const ans = data.split(",");
   answer.push(ans);
 }
-console.log(answer);
 
+//part 3
+// ====================================================
+const previousAnswer = answer;
 
+const key = previousAnswer[0];
 
+const keyValues = [];
 
+for (let i = 1; i < previousAnswer.length; i++) {
+  //   console.log(previousAnswer[i]);
+  const dataArrays = previousAnswer[i];
+  const dataObjects = {};
 
+  for (let j = 0; j < key.length; j++) {
+    dataObjects[key[j]] = dataArrays[j];
+  }
+  console.log(dataObjects);
+}
