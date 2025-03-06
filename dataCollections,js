@@ -91,6 +91,7 @@ for (let data of splitIt2) {
 //part 3
 // ====================================================
 const previousAnswer = answer;
+console.log(previousAnswer);
 
 const key = previousAnswer[0];
 
@@ -102,7 +103,37 @@ for (let i = 1; i < previousAnswer.length; i++) {
   const dataObjects = {};
 
   for (let j = 0; j < key.length; j++) {
-    dataObjects[key[j]] = dataArrays[j];
+    dataObjects[key[j].toLowerCase()] = dataArrays[j];
   }
-  console.log(dataObjects);
+  keyValues.push(dataObjects);
 }
+// console.log(keyValues);
+
+//part 4
+// ====================================================
+const dataInsideArray = keyValues;
+
+dataInsideArray.pop();
+dataInsideArray.splice(1, 0, {
+  id: "48",
+  name: "Barry",
+  occupation: "Runner",
+  age: "25",
+});
+
+dataInsideArray.push({
+  id: "7",
+  name: "Bilbo",
+  occupation: "None",
+  age: "111",
+});
+console.log(dataInsideArray);
+let total = 0;
+for (let i = 0; i < dataInsideArray.length; i++) {
+  if (dataInsideArray[i].age) {
+    total = total + parseInt(dataInsideArray[i].age);
+  }
+}
+const averageAge = total / dataInsideArray.length;
+
+console.log(averageAge);
