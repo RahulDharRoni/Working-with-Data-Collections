@@ -1,0 +1,97 @@
+// // Part - 1
+// ==============================
+
+// Part - 1.1
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("Fizz Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+
+
+// Part 1.2: Prime Time
+let num = 4;
+for (let i = num + 1; num; i++) {
+  let primeNumber = true;
+  for (let j = 2; j < num; j++) {
+    if (num % j === 0) {
+      primeNumber = false;
+      break;
+    } else primeNumber;
+  }
+  if (primeNumber) {
+    console.log(num);
+    break;
+  }
+}
+
+// Part 1.3
+
+const value = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+
+const dataSplit = value.split(",");
+const newArray = [];
+
+for (let i = 0; i < dataSplit.length; i++) {
+  newArray.push(dataSplit[i]);
+  if ((i + 1) % 4 === 0) {
+    console.log(newArray.join(","));
+  }
+}
+// Alternative Answer 1.3
+const value2 = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+
+const dataSplit2 = value2.split(",");
+
+// Split into chunks of 4
+for (let i = 0; i < dataSplit2.length; i += 4) {
+  const v = dataSplit2.slice(i, i + 4);
+  console.log(v.join(","));
+}
+
+// alternative solution 1.3
+const value3 = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+
+const raw = value3.slice("/n");
+const data = value3.slice(" , ");
+
+for (let i = 0; i < value3.length; i++) {
+  console.log(raw + data);
+  break;
+}
+
+// alternative solution 1.4
+const value4 = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+const splitIt = value4.split("\n");
+// console.log(splitIt);
+for (let data of splitIt) {
+  //   console.log(data);
+  const ans = data.split(",");
+  //   console.log(...ans);
+  console.log(ans.join(","));
+}
+
+// Part 2
+// ==============================================================================================================================
+const value22 = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+const splitIt2 = value22.split("\n");
+// console.log(splitIt);
+let answer = [];
+for (let data of splitIt2) {
+  //   console.log(data);
+  const ans = data.split(",");
+  answer.push(ans);
+}
+console.log(answer);
+
+
+
+
+
